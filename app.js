@@ -1,5 +1,6 @@
 (() => {
   'use strict';
+  if (window.__SC_SITE_INITIALIZED__) return;
   const $ = (s, root = document) => root.querySelector(s);
   const $$ = (s, root = document) => Array.from(root.querySelectorAll(s));
   const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
@@ -240,4 +241,6 @@
     if (reducedMotion.matches) splitGroups.forEach(({words}) => words.forEach(word => {word.style.opacity='1';word.style.transform='none';}));
     else queueScroll();
   });
+  window.__SC_SITE_INITIALIZED__ = true;
+  document.documentElement.classList.add('js-enabled');
 })();

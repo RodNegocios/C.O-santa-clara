@@ -322,3 +322,28 @@ button{font:inherit;color:inherit;cursor:pointer}
   .hero-bottom-copy h2{font-size:35px}
   .hero-portrait-caption{bottom:267px}
 }
+
+
+/* Hostinger hardening: stable sizing, accessible fallback if JavaScript is unavailable. */
+html,body{min-width:0}
+body{overflow-x:hidden}
+.site-frame{overflow:hidden;overflow:clip}
+.hero-title{max-width:100%}
+.hero-portrait-wrap img{color:var(--ink-soft)}
+/* Layout remains usable without JS (including in environments blocking inline scripts). */
+html:not(.js-enabled) .carousel-stage{display:flex;align-items:flex-start;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;height:auto;min-height:0;perspective:none;padding:0 var(--edge) 20px}
+html:not(.js-enabled) .service-card{position:relative;left:auto;top:auto;flex:0 0 min(78vw,360px);width:min(78vw,360px);min-width:0;height:auto;opacity:1!important;filter:none!important;transform:none!important;transition:none;pointer-events:auto;scroll-snap-align:center}
+html:not(.js-enabled) .gallery-window{height:auto;overflow-x:auto;padding:0 var(--edge) 20px}
+html:not(.js-enabled) .gallery-track{display:flex;align-items:flex-start;gap:20px;height:auto}
+html:not(.js-enabled) .gallery-card{position:relative;top:auto;left:auto;flex:0 0 min(75vw,326px);width:min(75vw,326px);height:auto;opacity:1!important;filter:none!important;transform:none!important;transition:none}
+html:not(.js-enabled) .carousel-controls,html:not(.js-enabled) .gallery-nav{display:none}
+/* Broken asset handling: retain the visual structure with honest labels, never blank page areas. */
+.asset-placeholder{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;text-align:center;padding:22px;line-height:1.5;font-family:var(--sans);font-weight:500;font-size:12px;letter-spacing:.06em;color:var(--ink);background:#e2e5dc;min-height:220px;width:100%}
+.asset-placeholder::before{content:'SANTA CLARA';font-family:var(--serif);font-weight:400;font-size:clamp(25px,3vw,42px);letter-spacing:.02em}
+.hero-portrait-wrap>.asset-placeholder{height:100%;border-radius:48% 48% 0 0}
+.service-card-image>.asset-placeholder,.gallery-card>.asset-placeholder{height:100%;min-height:0}
+.service-card-image:has(>.asset-placeholder)>img,.gallery-card:has(>.asset-placeholder)>img,.hero-portrait-wrap:has(>.asset-placeholder)>img{display:none}
+@media(max-width:600px){.asset-placeholder{font-size:10px;padding:14px}.asset-placeholder::before{font-size:24px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.geometry-arc{animation:none!important;stroke-dashoffset:0!important}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
+
+img[hidden]{display:none!important}
