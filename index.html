@@ -13,10 +13,11 @@
   <title>Santa Clara | Odontologia e Estética em Sapezal – MT</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/hero-dr-leonardo.png" as="image" fetchpriority="high">
-  <link rel="stylesheet" href="styles.css?v=20261113-aurora">
+  <link rel="stylesheet" href="styles.css?v=20261113-layout">
   <script src="app.js?v=20261113-aurora" defer></script>
   <script src="animated-content.js?v=20261113-aurora" defer></script>
   <script src="aurora.js?v=20261113-aurora" defer></script>
+  <script src="section-flow.js?v=20261113-layout" defer></script>
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -57,6 +58,15 @@
       </button>
     </div>
   </header>
+
+  <nav class="section-rail" aria-label="Navegar entre as seções">
+    <a href="#inicio" data-label="Início" aria-label="Ir ao início" aria-current="location"></a>
+    <a href="#essencia" data-label="A clínica" aria-label="Ir à clínica"></a>
+    <a href="#cuidados" data-label="Cuidados" aria-label="Ir aos cuidados"></a>
+    <a href="#resultados" data-label="Resultados" aria-label="Ir aos resultados"></a>
+    <a href="#profissional" data-label="Profissional" aria-label="Ir ao profissional"></a>
+    <a href="#contato" data-label="Contato" aria-label="Ir ao contato"></a>
+  </nav>
 
   <main id="conteudo">
     <section class="hero shell" id="inicio" aria-labelledby="hero-title">
