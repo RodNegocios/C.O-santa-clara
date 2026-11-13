@@ -1,17 +1,28 @@
 # Santa Clara — Odontologia e Estética
 
-Site institucional responsivo, em HTML, CSS e JavaScript nativos, sem dependências externas de execução. Conteúdo fundamentado no arquivo `docs/informacoes.md` e nas fotografias disponibilizadas no repositório.
+Site institucional estático e responsivo da Santa Clara Odontologia e Estética, em Sapezal/MT. Conteúdo fundamentado em `docs/informacoes.md`, com fotos e identidade visual do repositório.
 
-## Desenvolvimento e validação
+## Identidade e experiência
 
-- `npm run dev` — servidor de desenvolvimento em `http://127.0.0.1:4173`.
-- `npm run build` — verifica os arquivos e prepara `dist/` para publicação.
-- `npm run preview` — visualiza o build de produção.
+Reformulação editorial inspirada em páginas de produto com estética clara: tipografia de destaque, muito espaço em branco, faixas cinza `#f5f5f7`, superfícies brancas com cantos de 28px, ausência de sombras e botões verdes em harmonia com a marca. Inclui hero de fotografia central, seção institucional, carrossel de cuidados com swipe e autoplay, galeria circular de registros com modal, apresentação do Dr. Leonardo, dados da clínica e mapa.
 
-## Publicação na Hostinger
+As animações de títulos acompanham a rolagem e respeitam `prefers-reduced-motion`. A página conta com navegação por teclado, menu mobile, descrições alternativas das imagens e metadados de SEO.
 
-**Hospedagem de sites (hPanel):** rode `npm run build` e envie **o conteúdo** da pasta `dist/` para `public_html/`. `index.html` deve ficar diretamente em `public_html/`, junto de `app.js`, `styles.css`, `favicon.svg`, `robots.txt` e pasta `assets/`. Não é necessário servidor Node em produção.
+## Executar e publicar
 
-**Hostinger com Git / build automatizado:** build `npm run build`; diretório de saída `dist`. Caso a integração publique o diretório raiz diretamente, os arquivos da raiz também constituem o site pronto para hospedagem estática.
+Requer Node.js >=18 apenas para as tarefas locais (sem dependências externas):
 
-A galeria de imagens usa arquivos reais fornecidos com o projeto. Não há envio de dados a servidor: todos os CTAs de agendamento abrem o WhatsApp da clínica. O mapa é incorporado do Google Maps e requer internet no navegador. Horários e avaliações foram fornecidos pela clínica e precisam de conferência periódica. Sem analytics, cookies de rastreamento ou dependências de CDN.
+- `npm run dev` — servidor local de desenvolvimento.
+- `npm run build` — gera `dist/`, incluindo HTML, CSS, JS, favicon, robots e fotos.
+- `npm run preview` — prévia do build de produção.
+
+**Hostinger hPanel:** envie **o conteúdo** da pasta `dist/` para `public_html/`. Coloque `index.html` diretamente em `public_html/` com `styles.css`, `app.js`, `favicon.svg`, `robots.txt` e `assets/`. Não há backend nem necessidade de servidor Node em produção.
+
+**Hostinger com integração Git:** configure comando de build `npm run build`, diretório publicado `dist`. Alterações enviadas ao GitHub só aparecem no domínio quando o deploy correspondente for executado.
+
+## Informações e atenção
+
+Telefone/WhatsApp: (65) 99953-2460. Endereço e horários vêm de `docs/informacoes.md`; confirme especialmente o funcionamento de quinta-feira. Nota e número de avaliações Google são informações fornecidas pela clínica e podem variar.
+
+Os resultados exibidos são registros visuais fornecidos pela clínica; casos individuais podem variar. Não foram adicionados depoimentos fictícios. O agendamento direciona ao WhatsApp, sem formulário ou envio de dados a um servidor. O Google Maps incorporado necessita de internet.
+
