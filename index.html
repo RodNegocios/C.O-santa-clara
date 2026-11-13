@@ -1,733 +1,251 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#f3f0e7" />
-  <meta name="description" content="Santa Clara Odontologia e Estética. Mais de 22 anos de experiência em Sapezal, Mato Grosso. Conheça nosso espaço e agende pelo WhatsApp." />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="pt_BR" />
-  <meta property="og:title" content="Santa Clara — Odontologia & Estética" />
-  <meta property="og:description" content="Uma história de cuidado, confiança e sorrisos em Sapezal, MT." />
-  <meta property="og:image" content="assets/clinica-fachada.png" />
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;600;700&family=Italiana&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-  <link rel="preload" href="assets/hero-dr-leonardo.png" as="image" fetchpriority="high" />
-  <link rel="stylesheet" href="styles.css" />
-  <style id="site-critical-css">
-:root{
-  --paper:#f3f0e7;--paper-soft:#faf8f1;--paper-muted:#e8e9de;--ink:#18382f;--ink-soft:#314e43;--sage:#788973;--gold:#a89563;--line:#c9cbbc;--line-soft:rgba(39,65,51,.14);
-  --sans:'DM Sans',Arial,sans-serif;--serif:'Cormorant Garamond',Georgia,'Times New Roman',serif;--serif-logo:'Italiana',Georgia,serif;
-  --edge:clamp(25px,6.25vw,100px);--ease:cubic-bezier(.22,1,.36,1);
-}
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:88px}
-body{margin:0;background:#252a29;color:var(--ink);font-family:var(--sans);font-size:15px;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-body.modal-open{overflow:hidden}
-::selection{background:var(--ink);color:var(--paper)}
-img,svg{display:block;max-width:100%}
-img{object-fit:cover}
-button,a{-webkit-tap-highlight-color:transparent}
-a{color:inherit;text-decoration:none}
-button{font:inherit;color:inherit;cursor:pointer}
-:focus-visible{outline:2px solid var(--gold);outline-offset:5px}
-.skip-link{position:fixed;top:-80px;left:12px;background:var(--ink);color:#fff;padding:12px 16px;z-index:300}
-.skip-link:focus{top:12px}
-.site-frame{position:relative;background:var(--paper);max-width:1900px;margin:6px auto;border-radius:6px;overflow:clip;min-height:100vh}
-.page-pad{padding-left:var(--edge);padding-right:var(--edge)}
-.short-rule{width:35px;height:1px;display:inline-block;flex:none;background:currentColor;opacity:.74;vertical-align:middle}
-.site-header{height:116px;position:relative;z-index:90;border-bottom:1px solid var(--line-soft);background:var(--paper);transition:background .3s ease}
-.header-inner{height:100%;display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;gap:24px}
-.wordmark{display:inline-flex;flex-direction:column;justify-self:start;line-height:1;white-space:nowrap}
-.wordmark-title{font-family:var(--serif-logo);font-size:clamp(24px,2.75vw,41px);letter-spacing:.085em;font-weight:400}
-.gold-dot{color:var(--gold)}
-.wordmark-sub{font-family:var(--sans);font-size:8px;letter-spacing:.29em;margin-top:11px;align-self:center}
-.desktop-nav{display:flex;justify-content:center;gap:clamp(18px,2.4vw,48px);align-items:center;white-space:nowrap}
-.desktop-nav a{font-size:12px;font-weight:500;position:relative;padding:10px 0}
-.desktop-nav a::after,.header-contact span::after{content:"";position:absolute;left:0;right:100%;bottom:5px;height:1px;background:currentColor;transition:right .4s var(--ease)}
-.desktop-nav a:hover::after,.desktop-nav a:focus-visible::after,.header-contact:hover span::after{right:0}
-.header-contact{display:inline-flex;align-items:center;justify-self:end;gap:28px;font-size:12px;font-weight:500;white-space:nowrap}
-.header-contact span{position:relative;padding:7px 0}
-.header-contact svg{width:22px;height:22px;stroke:currentColor;stroke-width:1.4;fill:none;transition:transform .4s var(--ease)}
-.header-contact:hover svg{transform:translate(4px,-4px)}
-.menu-toggle,.mobile-nav{display:none}
-/* Architectural opening composition */
-.hero{position:relative;isolation:isolate;min-height:clamp(760px,calc(100svh - 116px),970px);overflow:hidden;background:var(--paper)}
-.hero::before{content:"";position:absolute;left:0;top:46%;right:0;height:1px;background:var(--line-soft);pointer-events:none}
-.hero::after{content:"";position:absolute;left:0;bottom:96px;right:0;height:1px;background:var(--line-soft);pointer-events:none}
-.hero-gridlines{position:absolute;inset:0;pointer-events:none;color:var(--line-soft)}
-.hero-gridlines>span{position:absolute;width:1px;height:100%;background:currentColor;top:0}
-.hero-gridlines>span:nth-child(1){left:50%}.hero-gridlines>span:nth-child(2){left:71%}.hero-gridlines>span:nth-child(3){left:97%}
-.hero-geometry{position:absolute;width:min(66%,920px);height:calc(100% + 80px);top:-66px;right:-2%;color:#84957f;z-index:0;pointer-events:none;overflow:visible}
-.geometry-arc{stroke-dasharray:1050;stroke-dashoffset:1050;animation:draw-arc 4.8s 1.15s var(--ease) forwards}
-@keyframes draw-arc{to{stroke-dashoffset:0}}
-.hero-content{position:relative;z-index:3;min-height:clamp(760px,calc(100svh - 116px),970px);pointer-events:none}
-.hero-content a{pointer-events:auto}
-.hero-kicker{display:flex;align-items:center;gap:17px;font-size:10px;font-weight:700;letter-spacing:.19em;padding-top:clamp(55px,6.6vh,95px)}
-.hero-kicker::before{content:"";display:block;position:absolute;top:46px;left:calc(var(--edge) - 39px);width:150px;height:1px;background:var(--ink);opacity:.78}
-.hero-title{font-family:var(--serif);font-weight:400;letter-spacing:-.065em;font-size:clamp(92px,12.1vw,191px);line-height:.78;margin:clamp(59px,6.8vh,96px) 0 0;max-width:1050px;position:relative;white-space:nowrap}
-.hero-title-accent{display:block;margin-left:clamp(25px,5vw,88px);margin-top:19px;font-weight:400;font-style:italic;color:var(--sage);font-size:.9em;letter-spacing:-.054em}
-.hero-period{color:var(--gold)}
-.hero-portrait-wrap{position:absolute;z-index:2;right:clamp(3px,3.7vw,75px);bottom:75px;width:min(42%,610px);height:min(78%,740px);overflow:hidden;display:flex;align-items:flex-end;justify-content:center;border-radius:48% 48% 2px 2px;background:#d7d9ce;box-shadow:inset 0 0 0 1px rgba(50,70,54,.1)}
-.hero-portrait-wrap img{width:100%;height:100%;object-position:center 27%;object-fit:cover;filter:saturate(.85) contrast(.98);transition:transform 1.2s var(--ease)}
-.hero-portrait-wrap:hover img{transform:scale(1.035)}
-.hero-portrait-wrap::after{content:"";position:absolute;inset:65% 0 0;pointer-events:none;background:linear-gradient(transparent,rgba(243,240,231,.28))}
-.hero-portrait-caption{position:absolute;right:var(--edge);bottom:110px;z-index:5;display:flex;align-items:flex-start;gap:16px;padding:17px 21px;background:var(--paper);font-size:9px;letter-spacing:.15em;line-height:1.9;box-shadow:0 2px 10px rgba(40,48,31,.06)}
-.hero-portrait-caption .short-rule{width:30px;margin-top:9px}
-.hero-portrait-caption small{font-size:8px;color:var(--sage)}
-.hero-bottom-copy{position:absolute;bottom:142px;left:var(--edge);max-width:470px}
-.hero-bottom-copy h2{font-family:var(--serif);font-size:clamp(33px,3.5vw,54px);line-height:.99;letter-spacing:-.037em;font-weight:400;margin:0 0 16px}
-.hero-bottom-copy h2 em{color:var(--sage);font-weight:400}
-.hero-bottom-copy>p{font-size:12px;font-weight:400;color:var(--ink-soft);line-height:1.7;max-width:335px;margin:0 0 27px}
-.hero-explore{display:inline-flex;align-items:center;gap:25px;font-size:12px;font-weight:500}
-.round-arrow{width:46px;height:46px;border:1px solid rgba(38,62,46,.38);border-radius:50%;display:grid;place-items:center;transition:background .3s,color .3s,transform .4s var(--ease)}
-.round-arrow svg{width:19px;fill:none;stroke:currentColor;stroke-width:1.1}
-.hero-explore:hover .round-arrow{background:var(--ink);color:var(--paper);transform:translateY(5px)}
-.hero-foot{position:absolute;z-index:7;bottom:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;gap:15px;min-height:96px;font-size:9px;letter-spacing:.15em;font-weight:600}
-.hero-foot>span:nth-child(2){padding-left:7%}
-.motion-toggle{background:none;border:0;display:flex;align-items:center;gap:11px;font-size:9px;font-weight:500;padding:10px 0;letter-spacing:0}
-.pause-mark{font-size:12px;line-height:1;letter-spacing:-.16em}
-.hero.motion-paused .geometry-arc{animation-play-state:paused}
-/* Editorial navigation */
-.section-index{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-top:24px;padding-bottom:24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-size:10px;letter-spacing:.12em}
-.section-index nav{display:flex;gap:clamp(15px,2.6vw,45px)}
-.section-index a{font-size:12px;letter-spacing:0;transition:color .2s}
-.section-index a:hover{color:var(--gold)}
-.section-index>span:last-child{white-space:nowrap}
-/* Global section rhythm */
-.section-pad{padding-top:clamp(93px,11.5vw,175px);padding-bottom:clamp(93px,11.5vw,175px)}
-.eyebrow{display:flex;align-items:center;gap:16px;font-size:10px;font-weight:700;letter-spacing:.19em}
-.display-title{font-family:var(--serif);font-weight:400;font-size:clamp(62px,7.1vw,113px);line-height:.91;letter-spacing:-.046em;margin:35px 0 0}
-.display-title em{font-weight:400;color:var(--sage)}
-.section-lead{font-size:16px;line-height:1.66;max-width:400px;margin:32px 0 0;color:#536458}
-/* Essence photo chapter */
-.essence{background:var(--paper-soft)}
-.essence .section-intro{position:relative}
-.essence .section-lead{margin-left:auto;margin-right:3%;margin-top:20px}
-.essence-gallery{display:grid;grid-template-columns:1.52fr .72fr;gap:26px;align-items:stretch;margin-top:65px}
-.media-figure{margin:0;min-width:0}
-.media-figure img{width:100%;height:100%;filter:saturate(.79);transition:filter .6s,transform 1.1s var(--ease)}
-.media-figure:hover img{filter:saturate(1);transform:scale(1.035)}
-.media-figure>img{overflow:hidden}
-.essence-large{height:640px;position:relative;overflow:hidden}
-.essence-large img{height:calc(100% - 44px);border-radius:3px 3px 70px 3px}
-.media-figure figcaption{display:flex;justify-content:space-between;gap:12px;align-items:center;font-size:10px;letter-spacing:.16em;padding-top:17px}
-.essence-side{min-width:0;display:grid;grid-template-rows:1fr auto;gap:30px}
-.essence-small{height:435px;overflow:hidden}
-.essence-small img{height:calc(100% - 44px);border-radius:125px 125px 3px 3px}
-.essence-counter{min-height:140px;border-top:1px solid var(--line);display:flex;align-items:flex-end;justify-content:space-between;gap:15px;padding:17px 0 0}
-.counter-number{font-family:var(--serif);font-size:clamp(95px,11vw,171px);line-height:.65;letter-spacing:-.075em}
-.counter-number sup{font-family:var(--sans);font-size:25px;vertical-align:top;letter-spacing:0;position:relative;top:-12px;color:var(--gold)}
-.essence-counter>span:last-child{font-size:9px;font-weight:600;letter-spacing:.14em;line-height:2;text-align:right}
-/* Tilt services */
-.services{background:var(--paper-muted);overflow:hidden}
-.services-intro .intro-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:25px;margin-top:28px}
-.intro-foot p{max-width:365px;font-size:15px;line-height:1.65;color:#58665a;margin:0}
-.under-arrow{font-size:13px;font-weight:600;padding:0 0 8px;border-bottom:1px solid currentColor;display:flex;gap:48px;white-space:nowrap}
-.under-arrow span{transition:transform .3s}
-.under-arrow:hover span{transform:translate(4px,-4px)}
-.carousel{margin-top:60px}
-.carousel-stage{height:615px;position:relative;perspective:1450px;touch-action:pan-y;outline-offset:-7px;isolation:isolate}
-.service-card{width:min(31vw,430px);min-width:310px;height:560px;position:absolute;top:3px;left:50%;transform:translate3d(-50%,0,0);will-change:transform,opacity;transition:transform .83s var(--ease),opacity .75s ease,filter .6s ease;cursor:grab;pointer-events:none}
-.service-card.is-active{pointer-events:auto;cursor:grab}
-.service-card-image{height:450px;background:#dde2d5;overflow:hidden;border-radius:220px 220px 4px 4px}
-.service-card-image img{width:100%;height:100%;object-fit:cover;pointer-events:none;transition:transform .9s var(--ease)}
-.service-card.is-active:hover img{transform:scale(1.045)}
-.service-card-copy{padding:19px 8px 5px;text-align:center}
-.service-card-copy>span{font-size:9px;letter-spacing:.17em;font-weight:700}
-.service-card-copy h3{font-family:var(--serif);font-size:35px;line-height:1;margin:9px 0 3px;letter-spacing:-.02em;font-weight:500}
-.service-card-copy p{font-size:12px;color:var(--sage);margin:0}
-.carousel-controls{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;margin-top:12px}
-.carousel-counter{display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.14em}
-.carousel-counter i{display:block;width:50px;height:1px;background:var(--line)}
-.carousel-dots{display:flex;align-items:center;justify-content:center;gap:9px}
-.carousel-dots button{background:transparent;border:1px solid var(--sage);border-radius:50%;width:8px;height:8px;padding:0;transition:background .25s,transform .25s}
-.carousel-dots button[aria-current="true"]{background:var(--ink);transform:scale(1.35);border-color:var(--ink)}
-.carousel-arrows{display:flex;justify-content:flex-end;gap:10px}
-.carousel-arrows button,.gallery-nav button{display:grid;place-items:center;width:51px;height:51px;border:1px solid var(--line);background:transparent;border-radius:50%;font-size:24px;font-family:var(--serif);transition:background .3s,color .3s,transform .3s}
-.carousel-arrows button:hover,.gallery-nav button:hover{background:var(--ink);color:var(--paper);transform:translateY(-2px)}
-.service-disclaimer{font-size:10px;color:#747d70;letter-spacing:.02em;margin:34px 0 0;text-align:center}
-/* Circular case study gallery */
-.results{background:var(--paper-soft);overflow:hidden}
-.results-intro .section-lead{margin-left:auto;text-align:right}
-.gallery-window{position:relative;height:590px;touch-action:pan-y;overflow:hidden;isolation:isolate;margin-top:60px}
-.gallery-window::before{content:"";position:absolute;z-index:0;left:50%;top:30px;width:800px;height:800px;border:1px solid #e1e3d7;border-radius:50%;transform:translateX(-50%);pointer-events:none}
-.gallery-track{position:relative;width:100%;height:100%}
-.gallery-card{position:absolute;top:34px;left:50%;display:flex;flex-direction:column;align-items:center;gap:16px;width:min(26vw,326px);height:455px;background:none;padding:0;border:none;cursor:pointer;transform:translateX(-50%);transition:transform .85s var(--ease),opacity .65s ease,filter .6s;will-change:transform}
-.gallery-card img{width:100%;height:405px;border-radius:150px 150px 2px 2px;background:#e2e3dc;pointer-events:none}
-.gallery-card span{font-size:9px;font-weight:700;letter-spacing:.16em}
-.gallery-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:0;gap:25px}
-.gallery-bottom>span{font-size:10px;letter-spacing:.15em;font-weight:600}
-.gallery-bottom>span>span{font-size:21px;vertical-align:middle;margin-left:10px}
-.gallery-nav{display:flex;align-items:center;gap:20px}
-.gallery-nav>span{font-size:11px;letter-spacing:.12em;min-width:62px;text-align:center}
-.results-note{margin-top:21px;font-size:11px;color:#697467}
-/* Doctor portrait editorial */
-.professional{background:var(--paper);overflow:hidden}
-.professional-grid{display:grid;grid-template-columns:1fr 0.83fr;gap:8%;align-items:center}
-.professional-copy{align-self:center;padding-top:15px}
-.professional-copy .display-title{font-size:clamp(56px,6.1vw,101px)}
-.professional-copy>p{margin:35px 0 0;max-width:485px;font-size:16px;color:#536459;line-height:1.8}
-.professional-sign{display:flex;align-items:flex-start;gap:18px;margin-top:51px;font-size:11px;font-weight:700;letter-spacing:.13em;line-height:2}
-.professional-sign .short-rule{margin-top:9px}
-.professional-sign small{font-size:9px;font-weight:400;letter-spacing:.1em;color:#617265}
-.outline-action{margin-top:35px;display:inline-flex;align-items:center;justify-content:space-between;gap:45px;border:1px solid var(--ink);padding:17px 20px;font-size:12px;min-width:240px;transition:background .3s,color .3s}
-.outline-action:hover{background:var(--ink);color:white}
-.outline-action span{font-size:18px}
-.professional-figure{margin:0;position:relative;min-width:0}
-.professional-figure::before{content:"";position:absolute;inset:8% -12% 8% -5%;border:1px solid var(--line);border-radius:50%;pointer-events:none}
-.professional-figure img{width:100%;height:min(650px,56vw);object-fit:cover;object-position:center 18%;border-radius:48% 48% 3px 3px;filter:saturate(.88);background:#d1d8cb;position:relative}
-.professional-figure figcaption{font-size:10px;letter-spacing:.16em;text-align:right;padding-top:18px}
-/* Metrics */
-.confidence{background:var(--ink);color:var(--paper);display:grid;grid-template-columns:1.2fr 1fr;gap:18px;align-items:center;padding-top:78px;padding-bottom:78px}
-.confidence .short-rule{background:var(--paper)}
-.confidence-left>p{font-family:var(--serif);font-size:clamp(37px,4.6vw,66px);letter-spacing:-.025em;line-height:1.02;margin:35px 0 0;max-width:620px}
-.confidence-values{display:flex;gap:clamp(30px,5vw,95px);justify-content:flex-end}
-.confidence-values>div{display:flex;flex-direction:column;gap:13px;align-items:flex-start}
-.confidence-values strong{font-family:var(--serif);font-size:clamp(78px,9vw,140px);font-weight:400;line-height:.75;letter-spacing:-.08em}
-.confidence-values strong sup{font-family:var(--sans);font-size:25px;letter-spacing:0;vertical-align:top;color:#d5c59b}
-.confidence-values>div>span{font-size:9px;letter-spacing:.13em;font-weight:600;white-space:nowrap}
-.confidence-note{grid-column:1/-1;margin:24px 0 0;color:#b8c8b8;font-size:10px}
-/* Conversion, map */
-.contact{background:var(--paper-soft)}
-.contact-heading{position:relative}
-.contact-heading .display-title{max-width:1050px}
-.contact-cta{display:inline-flex;align-items:center;justify-content:space-between;gap:75px;margin-top:40px;background:var(--ink);color:var(--paper);padding:17px 23px 17px 27px;font-size:13px;transition:background .3s,transform .3s}
-.contact-cta:hover{background:#486b59;transform:translateY(-3px)}
-.contact-cta>span:last-child{font-size:22px}
-.contact-grid{margin-top:91px;display:grid;grid-template-columns:.8fr 1.2fr;gap:8%}
-.contact-details{display:grid;gap:35px;align-content:start;border-top:1px solid var(--line);padding-top:28px}
-.contact-details>div{display:flex;flex-direction:column;align-items:flex-start;gap:13px}
-.contact-details>div>span{font-size:10px;letter-spacing:.16em;font-weight:700}
-.contact-details address,.contact-details p{font-family:var(--serif);font-size:25px;font-weight:400;font-style:normal;line-height:1.18;margin:0}
-.contact-details a:not(.phone){font-size:12px;text-decoration:underline;text-underline-offset:5px}
-.contact-details small{font-size:11px;line-height:1.5;color:#6b7568;max-width:360px}
-.contact-details .phone{font-family:var(--serif);font-size:31px}
-.map-figure{position:relative;min-width:0;height:475px;background:#e5e9dd;overflow:hidden;border-radius:3px 110px 3px 3px}
-.map-figure iframe{width:100%;height:100%;border:none;filter:grayscale(.7) contrast(.94)}
-.map-figure>span{position:absolute;bottom:17px;left:19px;background:var(--paper);padding:14px 17px;font-size:9px;letter-spacing:.12em}
-/* Footer */
-.site-footer{background:#e7e8dc;padding-top:65px;padding-bottom:23px}
-.footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;padding-bottom:68px;border-bottom:1px solid var(--line)}
-.footer-logo{font-family:var(--serif-logo);font-size:clamp(46px,7.5vw,115px);line-height:1;letter-spacing:-.065em;white-space:nowrap}
-.footer-logo span{color:var(--gold)}
-.footer-top p{font-family:var(--serif);font-size:clamp(26px,2.5vw,41px);margin:11px auto 0;line-height:.95}
-.back-top{border:1px solid var(--ink);border-radius:50%;width:49px;height:49px;display:grid;place-items:center;font-size:22px;transition:background .3s,color .3s}
-.back-top:hover{background:var(--ink);color:var(--paper)}
-.footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:22px;font-size:9px;letter-spacing:.13em}
-/* Lightbox */
-.lightbox{position:fixed;inset:0;background:rgba(15,28,22,.95);z-index:150;display:none;align-items:center;justify-content:space-between;padding:25px;gap:20px;color:#fff}
-.lightbox.is-open{display:flex}
-.lightbox figure{display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:0;max-width:74%;margin:0}
-.lightbox figure img{max-width:100%;max-height:80vh;object-fit:contain}
-.lightbox figcaption{text-align:center;font-size:12px;padding-top:14px;color:#d5dace}
-.lightbox button{border:1px solid rgba(255,255,255,.38);background:transparent;color:#fff;border-radius:50%;flex:none;width:48px;height:48px;font-size:23px}
-.lightbox button:hover{background:rgba(255,255,255,.15)}
-.lightbox-close{position:absolute;right:25px;top:20px;font-size:30px!important}
-/* Scroll-synced split words: app.js controls their transforms, never hide without JS */
-.split-word{display:inline-block;white-space:pre;will-change:transform,opacity}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;animation-iteration-count:1!important}.split-word{transform:none!important;opacity:1!important}.hero-portrait-wrap:hover img{transform:none}}
-/* Tablet */
-@media(max-width:1160px){
-  :root{--edge:clamp(30px,5.3vw,75px)}
-  .header-inner{grid-template-columns:1fr auto auto;gap:30px}.desktop-nav{gap:22px}
-  .hero-title{font-size:clamp(89px,12vw,145px)}.hero-title-accent{margin-left:3vw}
-  .hero-portrait-wrap{width:45%;right:3%;height:72%;bottom:89px}
-  .hero-bottom-copy{bottom:140px;max-width:310px}
-  .hero-bottom-copy h2{font-size:42px}.hero-bottom-copy>p{max-width:265px}
-  .hero-geometry{width:75%}.hero-portrait-caption{bottom:128px;right:var(--edge)}
-  .essence-large{height:550px}.essence-small{height:385px}.essence-counter{min-height:130px}
-  .professional-grid{gap:6%;grid-template-columns:1.1fr .9fr}
-  .contact-grid{gap:5%}
-}
-@media(max-width:860px){
-  :root{--edge:clamp(23px,4.8vw,49px)}
-  .site-header{height:92px}.header-inner{grid-template-columns:1fr auto;gap:16px}
-  .desktop-nav,.header-contact{display:none}
-  .menu-toggle{display:flex;flex-direction:column;justify-content:center;gap:7px;align-items:center;border:1px solid var(--line);border-radius:50%;background:transparent;width:46px;height:46px;z-index:100}
-  .menu-toggle span{display:block;width:18px;height:1px;background:var(--ink);transition:transform .3s}
-  .menu-toggle[aria-expanded=true] span:first-child{transform:translateY(4px) rotate(45deg)}
-  .menu-toggle[aria-expanded=true] span:last-child{transform:translateY(-4px) rotate(-45deg)}
-  .mobile-nav{display:none;position:absolute;top:92px;left:0;right:0;background:var(--paper);padding:25px var(--edge) 35px;border-bottom:1px solid var(--line);box-shadow:0 15px 35px rgba(20,38,29,.07);flex-direction:column;gap:0}
-  .mobile-nav.is-open{display:flex}.mobile-nav a{font-family:var(--serif);font-size:29px;padding:9px 0}.mobile-nav .mobile-contact{font-family:var(--sans);font-size:12px;margin-top:20px;display:flex;justify-content:space-between;border:1px solid var(--ink);padding:17px}
-  .hero,.hero-content{min-height:850px}
-  .hero-kicker{padding-top:69px}
-  .hero-title{font-size:clamp(91px,12vw,126px);margin-top:95px;line-height:.9}
-  .hero-title-accent{margin-top:8px;margin-left:3vw}
-  .hero-portrait-wrap{width:52%;height:54%;bottom:93px;right:2%}
-  .hero-geometry{width:90%;height:770px;top:45px;right:-20%}
-  .hero-bottom-copy{bottom:151px;max-width:45%}.hero-bottom-copy h2{font-size:39px}
-  .hero-portrait-caption{bottom:125px;right:var(--edge);padding:11px 13px;font-size:7px}
-  .hero-foot>span:nth-child(2){display:none}
-  .section-index nav{gap:18px}.section-index>span:last-child{display:none}
-  .essence-gallery{grid-template-columns:1.1fr .8fr;gap:17px}.essence-large{height:470px}.essence-small{height:320px}.essence-counter{min-height:110px}.counter-number{font-size:96px}.essence-counter>span:last-child{font-size:8px}
-  .carousel-stage{height:570px}.service-card{width:310px;height:530px;min-width:290px}.service-card-image{height:415px}
-  .gallery-window{height:540px}.gallery-card{width:285px}.gallery-card img{height:368px}
-  .professional-grid{grid-template-columns:1fr 0.85fr;gap:5%}.professional-copy .display-title{font-size:clamp(50px,7vw,75px)}.professional-copy>p{font-size:14px}.professional-figure img{height:520px}
-  .confidence{grid-template-columns:1fr;gap:45px}.confidence-values{justify-content:flex-start}.confidence-note{margin-top:0}
-  .contact-grid{grid-template-columns:1fr 1.1fr;gap:5%}.map-figure{height:440px}
-  .footer-top p{display:none}
-}
-/* Small devices */
-@media(max-width:600px){
-  :root{--edge:23px}
-  .site-frame{margin:3px;border-radius:3px}
-  .site-header{height:78px}.wordmark-title{font-size:25px}.wordmark-sub{font-size:6px;letter-spacing:.26em;margin-top:7px}
-  .menu-toggle{width:41px;height:41px}.mobile-nav{top:78px}
-  .hero,.hero-content{min-height:810px}
-  .hero-kicker{font-size:8px;letter-spacing:.13em;gap:9px;padding-top:46px}
-  .hero-kicker .short-rule{width:20px}.hero-kicker::before{display:none}
-  .hero-title{font-size:clamp(65px,13vw,95px);line-height:.91;margin-top:55px;letter-spacing:-.058em}
-  .hero-title-accent{margin-top:7px;margin-left:13px;font-size:.88em}
-  .hero-gridlines>span:first-child{left:33%}.hero-gridlines>span:nth-child(2){left:66%}
-  .hero-geometry{top:150px;right:-30%;width:125%;height:590px;opacity:.75}
-  .hero-portrait-wrap{height:415px;width:74%;right:0;bottom:92px;border-radius:48% 48% 0 0}
-  .hero-bottom-copy{z-index:5;bottom:135px;max-width:73%;left:var(--edge)}
-  .hero-bottom-copy h2{font-size:clamp(32px,8vw,45px);max-width:290px;text-shadow:0 1px 1px rgba(243,240,231,.9)}
-  .hero-bottom-copy>p{font-size:11px;line-height:1.5;max-width:235px;background:rgba(243,240,231,.88);padding:5px 4px 5px 0}
-  .hero-explore{font-size:11px;gap:10px;background:rgba(243,240,231,.9);padding:3px 9px 3px 0}
-  .round-arrow{width:38px;height:38px}
-  .hero-portrait-caption{bottom:101px;right:9px;font-size:6px;padding:8px 9px;gap:8px}.hero-portrait-caption .short-rule{width:15px}.hero-portrait-caption small{font-size:6px}
-  .hero-foot{min-height:77px;font-size:8px;letter-spacing:.1em}.hero::after{bottom:77px}
-  .motion-toggle{font-size:8px}.hero-foot>span:first-child{max-width:125px}
-  .section-index{padding-top:14px;padding-bottom:14px;display:block;overflow:auto}.section-index>span{display:none}.section-index nav{gap:24px;white-space:nowrap}.section-index nav a{font-size:11px}
-  .section-pad{padding-top:92px;padding-bottom:94px}
-  .eyebrow{font-size:8px;letter-spacing:.12em;gap:10px}.eyebrow .short-rule{width:23px}
-  .display-title{font-size:clamp(52px,11vw,73px);line-height:.98;margin-top:27px}
-  .section-lead{font-size:13px;margin-top:22px;line-height:1.6}
-  .essence .section-lead{margin:21px 0 0}
-  .essence-gallery{display:flex;flex-direction:column;gap:22px;margin-top:35px}
-  .essence-large{height:420px}.essence-large img{border-radius:3px 3px 60px 3px}
-  .essence-side{display:grid;grid-template-columns:.8fr 1fr;grid-template-rows:auto;gap:14px;align-items:end}
-  .essence-small{height:250px}.essence-small img{border-radius:100px 100px 3px 3px}.media-figure figcaption{font-size:8px;letter-spacing:.08em;line-height:1.4;gap:6px}
-  .essence-counter{display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;gap:13px;min-height:0;padding-bottom:44px}
-  .essence-counter .counter-number{font-size:105px}.essence-counter>span:last-child{text-align:left;font-size:8px}
-  .services-intro .intro-foot{display:block;margin-top:26px}.intro-foot p{font-size:13px;max-width:270px}.under-arrow{display:inline-flex;margin-top:18px;gap:25px;font-size:12px}
-  .carousel{margin-top:43px}.carousel-stage{height:492px}.service-card{width:70vw;min-width:0;height:470px;top:0}.service-card-image{height:335px;border-radius:160px 160px 2px 2px}.service-card-copy{padding-top:15px}.service-card-copy h3{font-size:31px}.service-card-copy p{font-size:11px}
-  .carousel-controls{margin-top:6px}.carousel-arrows button,.gallery-nav button{width:41px;height:41px;font-size:22px}.carousel-dots{gap:7px}.carousel-dots button{width:6px;height:6px}.carousel-counter{gap:6px;font-size:10px}.carousel-counter i{width:17px}
-  .service-disclaimer{font-size:9px;line-height:1.6;margin-top:18px}
-  .results-intro .section-lead{margin:20px 0 0;text-align:left}
-  .gallery-window{margin-top:38px;height:430px}.gallery-card{width:57vw;height:365px;top:18px;gap:12px}.gallery-card img{height:321px}.gallery-card span{font-size:8px}
-  .gallery-bottom>span{font-size:8px;letter-spacing:.06em}.gallery-bottom>span>span{display:none}.gallery-nav{gap:9px}.gallery-nav>span{font-size:9px;min-width:51px}.results-note{font-size:10px;line-height:1.5;margin-top:18px}
-  .professional-grid{grid-template-columns:1fr;gap:48px}.professional-copy .display-title{font-size:clamp(55px,11vw,78px)}.professional-copy>p{font-size:14px;margin-top:27px}.professional-sign{margin-top:26px}.outline-action{margin-top:25px}
-  .professional-figure{width:87%;margin:0 auto}.professional-figure img{height:490px}.professional-figure figcaption{font-size:8px}
-  .confidence{padding-top:72px;padding-bottom:68px;gap:35px}.confidence-left>p{font-size:45px;margin-top:23px}.confidence-values{justify-content:space-between;gap:15px}.confidence-values strong{font-size:89px}.confidence-values>div>span{font-size:8px}.confidence-note{font-size:9px;line-height:1.5}
-  .contact-cta{gap:20px;max-width:100%;font-size:12px;margin-top:28px;padding:16px 18px}
-  .contact-grid{grid-template-columns:1fr;gap:45px;margin-top:59px}.contact-details{grid-template-columns:1fr 1fr;gap:30px 14px}.contact-details>div:first-child{grid-column:1/-1}.contact-details address,.contact-details p{font-size:21px}.contact-details .phone{font-size:25px}.contact-details small{font-size:10px}.map-figure{height:330px;border-radius:3px 70px 3px 3px}
-  .site-footer{padding-top:47px}.footer-top{padding-bottom:44px}.footer-logo{font-size:clamp(48px,12vw,77px)}.footer-bottom{font-size:8px;line-height:1.7;flex-wrap:wrap;gap:5px 15px}.footer-bottom span:last-child{display:none}
-  .lightbox{padding:13px;gap:5px}.lightbox figure{max-width:calc(100% - 79px)}.lightbox button{width:37px;height:37px;font-size:19px}.lightbox-close{right:12px;top:12px}.lightbox figcaption{font-size:10px}
-}
-@media(max-width:370px){
-  :root{--edge:17px}.hero,.hero-content{min-height:770px}.hero-kicker{font-size:7px}.hero-title{font-size:clamp(57px,12.3vw,70px)}.hero-title-accent{margin-left:10px}.hero-portrait-wrap{height:370px;width:77%}.hero-bottom-copy{max-width:78%;bottom:122px}.hero-bottom-copy h2{font-size:33px}.hero-bottom-copy>p{max-width:205px;font-size:10px;margin-bottom:14px}.hero-foot{font-size:7px}.motion-toggle{font-size:7px}.section-index nav{gap:14px}.section-index nav a{font-size:10px}
-  .display-title{font-size:51px}.essence-large{height:350px}.essence-small{height:215px}.essence-counter .counter-number{font-size:84px}.essence-counter>span:last-child{font-size:7px}.service-card{width:73vw}.gallery-card{width:60vw}.professional-figure img{height:420px}.contact-details{grid-template-columns:1fr}.contact-details>div:first-child{grid-column:auto}
-}
-/* On phones the portrait and the editorial introduction form consecutive visual beats. */
-@media(max-width:600px){
-  .hero,.hero-content{min-height:985px}
-  .hero-portrait-wrap{height:405px;bottom:267px;width:77%}
-  .hero-bottom-copy{bottom:103px;max-width:calc(100% - var(--edge) * 2);width:100%;background:transparent;padding:0}
-  .hero-bottom-copy h2{font-size:40px;max-width:none}
-  .hero-bottom-copy>p{max-width:340px;background:transparent;padding:0;margin-bottom:17px}
-  .hero-explore{background:none;padding:0}
-  .hero-portrait-caption{bottom:281px}
-  .hero-geometry{height:760px;top:68px}
-}
-@media(max-width:370px){
-  .hero,.hero-content{min-height:943px}
-  .hero-portrait-wrap{height:365px;bottom:255px;width:79%}
-  .hero-bottom-copy{bottom:96px}
-  .hero-bottom-copy h2{font-size:35px}
-  .hero-portrait-caption{bottom:267px}
-}
-
-
-/* Hostinger hardening: stable sizing, accessible fallback if JavaScript is unavailable. */
-html,body{min-width:0}
-body{overflow-x:hidden}
-.site-frame{overflow:hidden;overflow:clip}
-.hero-title{max-width:100%}
-.hero-portrait-wrap img{color:var(--ink-soft)}
-/* Layout remains usable without JS (including in environments blocking inline scripts). */
-html:not(.js-enabled) .carousel-stage{display:flex;align-items:flex-start;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;height:auto;min-height:0;perspective:none;padding:0 var(--edge) 20px}
-html:not(.js-enabled) .service-card{position:relative;left:auto;top:auto;flex:0 0 min(78vw,360px);width:min(78vw,360px);min-width:0;height:auto;opacity:1!important;filter:none!important;transform:none!important;transition:none;pointer-events:auto;scroll-snap-align:center}
-html:not(.js-enabled) .gallery-window{height:auto;overflow-x:auto;padding:0 var(--edge) 20px}
-html:not(.js-enabled) .gallery-track{display:flex;align-items:flex-start;gap:20px;height:auto}
-html:not(.js-enabled) .gallery-card{position:relative;top:auto;left:auto;flex:0 0 min(75vw,326px);width:min(75vw,326px);height:auto;opacity:1!important;filter:none!important;transform:none!important;transition:none}
-html:not(.js-enabled) .carousel-controls,html:not(.js-enabled) .gallery-nav{display:none}
-/* Broken asset handling: retain the visual structure with honest labels, never blank page areas. */
-.asset-placeholder{display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;text-align:center;padding:22px;line-height:1.5;font-family:var(--sans);font-weight:500;font-size:12px;letter-spacing:.06em;color:var(--ink);background:#e2e5dc;min-height:220px;width:100%}
-.asset-placeholder::before{content:'SANTA CLARA';font-family:var(--serif);font-weight:400;font-size:clamp(25px,3vw,42px);letter-spacing:.02em}
-.hero-portrait-wrap>.asset-placeholder{height:100%;border-radius:48% 48% 0 0}
-.service-card-image>.asset-placeholder,.gallery-card>.asset-placeholder{height:100%;min-height:0}
-.service-card-image:has(>.asset-placeholder)>img,.gallery-card:has(>.asset-placeholder)>img,.hero-portrait-wrap:has(>.asset-placeholder)>img{display:none}
-@media(max-width:600px){.asset-placeholder{font-size:10px;padding:14px}.asset-placeholder::before{font-size:24px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.geometry-arc{animation:none!important;stroke-dashoffset:0!important}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
-
-img[hidden]{display:none!important}
-
-</style>
-  <title>Santa Clara — Odontologia & Estética | Sapezal, MT</title>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Dentist","name":"Santa Clara Odontologia e Estética","description":"Clínica de odontologia e estética em Sapezal, Mato Grosso.","telephone":"+55 65 99953-2460","address":{"@type":"PostalAddress","streetAddress":"Avenida Rotary Internacional, 259, Águas Claras","addressLocality":"Sapezal","addressRegion":"MT","postalCode":"78365-000","addressCountry":"BR"}}</script>
-  <script>
-  /* Asset recovery: if a hosting deployment omits /assets, use the same file from the public GitHub repo. */
-  window.addEventListener('error', function (event) {
-    var img = event.target;
-    if (!img || img.tagName !== 'IMG') return;
-    var source = img.getAttribute('src') || '';
-    if (!img.dataset.assetRetried && /^\/?(?:\.\/)?assets\/[a-z0-9-]+\.png$/i.test(source)) {
-      img.dataset.assetRetried = 'yes';
-      img.src = 'https://raw.githubusercontent.com/RodNegocios/C.O-santa-clara/main/' + source.replace(/^\/?(?:\.\/)?/, '');
-      return;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Santa Clara Odontologia e Estética em Sapezal, MT. Mais de 22 anos de experiência, cuidado individualizado e agendamento pelo WhatsApp.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Santa Clara | Odontologia e Estética">
+  <meta property="og:description" content="Cuidado, confiança e mais de 22 anos de experiência em Sapezal.">
+  <meta property="og:image" content="assets/clinica-fachada.png">
+  <title>Santa Clara | Odontologia e Estética em Sapezal – MT</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/hero-dr-leonardo.png" as="image" fetchpriority="high">
+  <link rel="stylesheet" href="styles.css?v=20261113-aurora">
+  <script src="app.js?v=20261113-aurora" defer></script>
+  <script src="animated-content.js?v=20261113-aurora" defer></script>
+  <script src="aurora.js?v=20261113-aurora" defer></script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Dentist",
+    "name":"Santa Clara Odontologia e Estética",
+    "description":"Clínica de odontologia e estética em Sapezal, Mato Grosso.",
+    "telephone":"+55 65 99953-2460",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"Avenida Rotary Internacional, 259",
+      "addressLocality":"Sapezal",
+      "addressRegion":"MT",
+      "postalCode":"78365-000",
+      "addressCountry":"BR"
     }
-    if (img.dataset.assetUnavailable) return;
-    img.dataset.assetUnavailable = 'yes';
-    var fallback = document.createElement('span');
-    fallback.className = 'asset-placeholder';
-    fallback.setAttribute('role', 'img');
-    fallback.setAttribute('aria-label', img.alt || 'Imagem indisponível');
-    fallback.textContent = 'Imagem temporariamente indisponível';
-    img.hidden = true;
-    img.insertAdjacentElement('afterend', fallback);
-  }, true);
+  }
   </script>
 </head>
 <body>
-<a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
-<div class="site-frame" id="topo">
-  <header class="site-header">
-    <div class="header-inner page-pad">
-      <a class="wordmark" href="#topo" aria-label="Santa Clara, início">
-        <span class="wordmark-title">SANTA CLARA<span class="gold-dot">.</span></span>
-        <span class="wordmark-sub">ODONTOLOGIA &amp; ESTÉTICA</span>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header" id="topo">
+    <div class="shell header-inner">
+      <a class="brand" href="#inicio" aria-label="Santa Clara Odontologia e Estética — início">
+        <span class="brand-monogram" aria-hidden="true">SC<span>.</span></span>
+        <span class="brand-copy">Santa Clara <small>ODONTOLOGIA &amp; ESTÉTICA</small></span>
       </a>
-      <nav class="desktop-nav" aria-label="Navegação principal">
-        <a href="#essencia">Nossa essência</a>
+      <nav class="nav" id="navegacao" aria-label="Navegação principal">
+        <a href="#essencia">A clínica</a>
         <a href="#cuidados">Cuidados</a>
         <a href="#resultados">Resultados</a>
+        <a href="#profissional">Dr. Leonardo</a>
+        <a href="#contato" class="nav-contact">Contato <span aria-hidden="true">↗</span></a>
       </nav>
-      <a class="header-contact" href="https://wa.me/5565999532460?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Santa%20Clara." target="_blank" rel="noopener noreferrer"><span>Vamos conversar</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M7 5h12v12" /></svg></a>
-      <button class="menu-toggle" type="button" aria-controls="mobile-nav" aria-expanded="false" aria-label="Abrir menu"><span></span><span></span></button>
+      <a class="header-cta" href="https://wa.me/5565999532460?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer">Agendar <span aria-hidden="true">↗</span></a>
+      <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="navegacao" aria-expanded="false">
+        <span></span><span></span>
+      </button>
     </div>
-    <nav class="mobile-nav" id="mobile-nav" aria-label="Navegação móvel" inert>
-      <a href="#essencia">Nossa essência</a><a href="#cuidados">Cuidados</a><a href="#resultados">Resultados</a><a href="#profissional">Dr. Leonardo</a><a href="#contato">Localização</a>
-      <a class="mobile-contact" href="https://wa.me/5565999532460" target="_blank" rel="noopener noreferrer">Agendar uma avaliação <span aria-hidden="true">↗</span></a>
-    </nav>
   </header>
 
   <main id="conteudo">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-gridlines" aria-hidden="true"><span></span><span></span><span></span></div>
-      <svg class="hero-geometry" viewBox="0 0 840 920" fill="none" aria-hidden="true" preserveAspectRatio="xMidYMid meet">
-        <g stroke="currentColor" stroke-width=".75" opacity=".59">
-          <circle cx="418" cy="462" r="394"/><circle cx="418" cy="462" r="351"/><circle cx="418" cy="462" r="303"/><circle cx="418" cy="462" r="262"/>
-          <path d="M0 462H840M418 0V920M55 68 784 854M10 836 809 93M110 122H727V782H110zM92 162H748V742H92z"/>
-          <path d="M0 208H840M0 711H840M145 0V920M681 0V920"/>
-        </g>
-        <path class="geometry-arc" d="M116 569A331 331 0 0 1 317 147" stroke="#536b57" stroke-width="1.55" />
-        <g fill="none" stroke="currentColor" stroke-width=".8" opacity=".58"><circle cx="418" cy="462" r="4"/><circle cx="748" cy="462" r="4"/><path d="M402 462h32M418 446v32"/></g>
-      </svg>
-      <div class="hero-content page-pad">
-        <div class="hero-kicker"><span class="short-rule"></span> SANTA CLARA · CUIDADO COM ESSÊNCIA</div>
-        <h1 id="hero-title" class="hero-title" data-split>Santa Clara<span class="hero-title-accent">Odontologia<span class="hero-period">.</span></span></h1>
-        <div class="hero-bottom-copy"><h2>Um olhar atento.<br />Um cuidado <em>seu.</em></h2><p>Há mais de 22 anos, cuidado e acolhimento em cada detalhe.</p><a class="hero-explore" href="#essencia"><span>Conheça nossa essência</span><span class="round-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 4v16M5 13l7 7 7-7" /></svg></span></a></div>
+    <section class="hero shell" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-aurora" data-aurora aria-hidden="true"><canvas class="hero-aurora-canvas"></canvas></div>
+      <div class="hero-lead" data-animate="rise" data-trigger="mount" data-stagger="0.115" data-distance="48" data-blur="5" data-duration="1.05">
+        <span class="eyebrow"><span class="eyebrow-line"></span> SANTA CLARA · SAPEZAL, MATO GROSSO</span>
+        <h1 id="hero-title">O cuidado que faz <em>a diferença.</em></h1>
+        <p>Odontologia e estética com experiência, atenção e um olhar dedicado a você.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://wa.me/5565999532460?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer">Agendar uma consulta <span aria-hidden="true">↗</span></a>
+          <a class="text-link" href="#essencia">Conheça a Santa Clara <span aria-hidden="true">↓</span></a>
+        </div>
       </div>
-      <div class="hero-portrait-wrap"><img src="assets/hero-dr-leonardo.png" alt="Dr. Leonardo Barros, profissional de referência da Santa Clara" width="900" height="1100" fetchpriority="high" decoding="async" /></div>
-      <div class="hero-portrait-caption"><span class="short-rule"></span><span>DR. LEONARDO BARROS<br /><small>SANTA CLARA ODONTOLOGIA</small></span></div>
-      <div class="hero-foot page-pad"><span>SAPEZAL, MATO GROSSO</span><span>ENTRE HISTÓRIAS, CUIDADOS E SORRISOS.</span><button class="motion-toggle" id="motion-toggle" type="button" aria-pressed="false"><span class="pause-mark" aria-hidden="true">Ⅱ</span> <span id="motion-label">Pausar linhas</span></button></div>
-    </section>
 
-    <div class="section-index page-pad" aria-label="Navegação por seções"><span>01 — 05</span><nav><a href="#essencia">Essência</a><a href="#cuidados">Cuidados</a><a href="#resultados">Resultados</a><a href="#profissional">Profissional</a><a href="#contato">Contato</a></nav><span>DESLIZE PARA DESCOBRIR <span aria-hidden="true">↓</span></span></div>
-
-    <section class="essence section-pad" id="essencia" aria-labelledby="essence-title">
-      <div class="section-intro page-pad"><span class="eyebrow"><span class="short-rule"></span> 01 / NOSSA ESSÊNCIA</span><h2 class="display-title" id="essence-title" data-split>Mais que um espaço.<br /><em>Um lugar de confiança.</em></h2><p class="section-lead">Uma trajetória de mais de 22 anos dedicada à odontologia e à estética em Sapezal.</p></div>
-      <div class="essence-gallery page-pad">
-        <figure class="essence-large media-figure"><img src="assets/clinica-fachada.png" alt="Fachada da Clínica Santa Clara em Sapezal" loading="lazy" decoding="async" width="1100" height="820"/><figcaption><span>01</span><span>ONDE TUDO COMEÇA</span></figcaption></figure>
-        <div class="essence-side"><figure class="essence-small media-figure"><img src="assets/recepcao.png" alt="Recepção da Santa Clara Odontologia e Estética" loading="lazy" decoding="async" width="700" height="850"/><figcaption><span>02</span><span>UM ESPAÇO PARA ACOLHER</span></figcaption></figure><div class="essence-counter"><span class="counter-number">22<sup>+</sup></span><span>ANOS DE EXPERIÊNCIA<br />EM ODONTOLOGIA E ESTÉTICA</span></div></div>
+      <div class="hero-showcase" data-animate="rise" data-distance="46" data-delay="0.2" data-duration="1.15">
+        <div class="hero-story">
+          <span class="tiny-label">NOSSA HISTÓRIA</span>
+          <p>Um espaço para cuidar de quem você é.</p>
+          <div class="hero-story-bottom">
+            <strong>22<span>+</span></strong>
+            <span>ANOS DE<br>EXPERIÊNCIA</span>
+          </div>
+          <span class="hero-story-accent" aria-hidden="true"></span>
+        </div>
+        <div class="hero-visual">
+          <img src="assets/hero-dr-leonardo.png" alt="Dr. Leonardo Barros, profissional de referência da Santa Clara Odontologia e Estética" width="1100" height="1000" fetchpriority="high" decoding="async" data-fallback="assets/dr-leonardo-retrato.png">
+          <div class="hero-photo-caption"><span class="caption-dot"></span> Dr. Leonardo Barros</div>
+        </div>
+      </div>
+      <div class="hero-foot" data-animate="rise" data-delay="0.35" data-distance="25">
+        <span>01 / SANTA CLARA ODONTOLOGIA &amp; ESTÉTICA</span>
+        <a href="#essencia" aria-label="Ir para a próxima seção">DESCUBRA MAIS <span class="arrow-circle" aria-hidden="true">↓</span></a>
       </div>
     </section>
 
-    <section class="services section-pad" id="cuidados" aria-labelledby="service-title">
-      <div class="section-intro page-pad services-intro"><span class="eyebrow"><span class="short-rule"></span> 02 / NOSSOS CUIDADOS</span><h2 class="display-title" id="service-title" data-split>A beleza de cuidar<br /><em>de cada detalhe.</em></h2><div class="intro-foot"><p>Saúde bucal e estética com atenção às necessidades de cada pessoa.</p><a class="under-arrow" href="https://wa.me/5565999532460" target="_blank" rel="noopener noreferrer">Fale com a equipe <span aria-hidden="true">↗</span></a></div></div>
-      <div class="carousel" aria-roledescription="carrossel" aria-label="Áreas de cuidado da Santa Clara"><div class="carousel-stage" id="service-stage" tabindex="0">
-        <article class="service-card" aria-label="1 de 4"><div class="service-card-image"><img src="assets/sorriso-detalhe.png" alt="Sorriso em fotografia de detalhe" loading="lazy" decoding="async" width="750" height="920" /></div><div class="service-card-copy"><span>01 / SAÚDE BUCAL</span><h3>Cuidar é o começo.</h3><p>Um olhar atento à saúde do seu sorriso.</p></div></article>
-        <article class="service-card" aria-label="2 de 4"><div class="service-card-image"><img src="assets/antes-depois-03.png" alt="Registro visual de tratamento do sorriso" loading="lazy" decoding="async" width="750" height="920" /></div><div class="service-card-copy"><span>02 / ESTÉTICA DO SORRISO</span><h3>Harmonia natural.</h3><p>Estética com sensibilidade e cuidado.</p></div></article>
-        <article class="service-card" aria-label="3 de 4"><div class="service-card-image"><img src="assets/retrato-clinica.png" alt="Ambiente e atendimento da clínica" loading="lazy" decoding="async" width="750" height="920" /></div><div class="service-card-copy"><span>03 / ACOMPANHAMENTO</span><h3>Presença em cada etapa.</h3><p>Atenção que vai além do procedimento.</p></div></article>
-        <article class="service-card" aria-label="4 de 4"><div class="service-card-image"><img src="assets/antes-depois-labios.png" alt="Registro fotográfico de tratamento estético" loading="lazy" decoding="async" width="750" height="920" /></div><div class="service-card-copy"><span>04 / ESTÉTICA</span><h3>Beleza em equilíbrio.</h3><p>Cuidado estético pensado para você.</p></div></article>
-      </div><div class="carousel-controls page-pad"><div class="carousel-counter"><span id="service-current">01</span><i></i><span>04</span></div><div class="carousel-dots" aria-label="Escolher cuidado"><button type="button" aria-label="Ir para cuidado 1" aria-current="true"></button><button type="button" aria-label="Ir para cuidado 2"></button><button type="button" aria-label="Ir para cuidado 3"></button><button type="button" aria-label="Ir para cuidado 4"></button></div><div class="carousel-arrows"><button type="button" id="service-prev" aria-label="Cuidado anterior">←</button><button type="button" id="service-next" aria-label="Próximo cuidado">→</button></div></div></div>
-      <p class="service-disclaimer page-pad">Os cuidados e tratamentos indicados dependem de avaliação profissional.</p>
+    <section class="editorial section-space shell" id="essencia" aria-labelledby="essencia-title">
+      <div class="section-heading" data-animate="rise" data-distance="64" data-blur="4" data-stagger="0.1">
+        <span class="eyebrow">01 <span class="eyebrow-line"></span> A CLÍNICA</span>
+        <h2 id="essencia-title">Acolhimento em cada <em>detalhe.</em></h2>
+      </div>
+      <div class="editorial-grid">
+        <div class="editorial-photo-wrap" data-animate="rise" data-distance="75" data-wipe="up" data-duration="1.1">
+          <img src="assets/recepcao.png" alt="Recepção da Santa Clara Odontologia e Estética" loading="lazy" decoding="async" width="1200" height="1000">
+          <span class="photo-label">UM AMBIENTE PENSADO PARA VOCÊ</span>
+        </div>
+        <div class="editorial-side" data-animate="rise" data-stagger="0.12" data-distance="40">
+          <p class="large-statement">Há mais de duas décadas, um compromisso com o seu bem-estar.</p>
+          <p>Na Santa Clara, em Sapezal, a experiência se encontra com um atendimento próximo, humano e cuidadoso.</p>
+          <a class="text-link" href="#profissional">Conheça quem cuida de você <span aria-hidden="true">↗</span></a>
+          <div class="editorial-small-photo">
+            <img src="assets/clinica-fachada.png" alt="Fachada da clínica Santa Clara em Sapezal" loading="lazy" decoding="async" width="760" height="560">
+            <span>SAPEZAL, MT</span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="results section-pad" id="resultados" aria-labelledby="results-title"><div class="section-intro page-pad results-intro"><span class="eyebrow"><span class="short-rule"></span> 03 / TRANSFORMAÇÕES</span><h2 class="display-title" id="results-title" data-split>Histórias que<br /><em>se revelam no sorriso.</em></h2><p class="section-lead">Registros visuais compartilhados pela clínica. Explore cada detalhe.</p></div>
-      <div class="gallery-window" id="gallery" tabindex="0" role="region" aria-roledescription="galeria circular" aria-label="Galeria de registros antes e depois, navegue pelas setas ou arrastando"><div class="gallery-track">
-        <button class="gallery-card" type="button" data-caption="Registro de antes e depois · sorriso 01" aria-label="Ampliar registro 1"><img src="assets/antes-depois-01.png" alt="Comparação de sorriso antes e depois, registro 1" loading="lazy" decoding="async" width="600" height="700"/><span>REGISTRO 01</span></button>
-        <button class="gallery-card" type="button" data-caption="Registro de antes e depois · sorriso 02" aria-label="Ampliar registro 2"><img src="assets/antes-depois-02.png" alt="Comparação de sorriso antes e depois, registro 2" loading="lazy" decoding="async" width="600" height="700"/><span>REGISTRO 02</span></button>
-        <button class="gallery-card" type="button" data-caption="Registro de antes e depois · sorriso 03" aria-label="Ampliar registro 3"><img src="assets/antes-depois-03.png" alt="Comparação de sorriso antes e depois, registro 3" loading="lazy" decoding="async" width="600" height="700"/><span>REGISTRO 03</span></button>
-        <button class="gallery-card" type="button" data-caption="Registro de antes e depois · sorriso 04" aria-label="Ampliar registro 4"><img src="assets/antes-depois-04.png" alt="Comparação de sorriso antes e depois, registro 4" loading="lazy" decoding="async" width="600" height="700"/><span>REGISTRO 04</span></button>
-        <button class="gallery-card" type="button" data-caption="Registro de antes e depois · sorriso 05" aria-label="Ampliar registro 5"><img src="assets/antes-depois-05.png" alt="Comparação de sorriso antes e depois, registro 5" loading="lazy" decoding="async" width="600" height="700"/><span>REGISTRO 05</span></button>
-        <button class="gallery-card" type="button" data-caption="Registro de antes e depois · estética 06" aria-label="Ampliar registro 6"><img src="assets/antes-depois-labios.png" alt="Comparação estética de lábios, registro 6" loading="lazy" decoding="async" width="600" height="700"/><span>REGISTRO 06</span></button>
-      </div></div><div class="gallery-bottom page-pad"><span>ARRASTE PARA EXPLORAR <span aria-hidden="true">↔</span></span><div class="gallery-nav"><button type="button" id="gallery-prev" aria-label="Imagem anterior">←</button><span id="gallery-position">01 / 06</span><button type="button" id="gallery-next" aria-label="Próxima imagem">→</button></div></div><p class="results-note page-pad">Imagens fornecidas pela clínica. Cada caso é único e os resultados podem variar.</p>
+    <section class="services section-space band" id="cuidados" aria-labelledby="cuidados-title">
+      <div class="shell">
+        <div class="section-heading heading-row" data-animate="rise" data-stagger="0.12" data-distance="54" data-blur="3">
+          <div>
+            <span class="eyebrow">02 <span class="eyebrow-line"></span> NOSSOS CUIDADOS</span>
+            <h2 id="cuidados-title">Bem-estar começa com <em>atenção.</em></h2>
+            <p class="section-subline">Cada pessoa merece um cuidado que respeite sua história.</p>
+          </div>
+          <div class="slider-controls" aria-label="Controles do carrossel de cuidados">
+            <button type="button" class="round-control" id="services-prev" aria-label="Cuidado anterior">←</button>
+            <button type="button" class="round-control" id="services-next" aria-label="Próximo cuidado">→</button>
+          </div>
+        </div>
+        <div class="services-track" data-animate="rise" data-distance="38" data-duration="1.1" id="services-track" tabindex="0" aria-label="Carrossel de cuidados. Use as setas para navegar">
+          <article class="service-card">
+            <div class="service-media"><img src="assets/sorriso-detalhe.png" alt="Fotografia em detalhe de um sorriso" width="960" height="740" loading="lazy" decoding="async"></div>
+            <div class="service-copy"><span>01 / ODONTOLOGIA</span><h3>Saúde bucal</h3><p>Atenção dedicada à saúde e ao cuidado do seu sorriso.</p></div>
+          </article>
+          <article class="service-card">
+            <div class="service-media"><img src="assets/retrato-clinica.png" alt="Fotografia de ambiente e atendimento na Santa Clara" width="960" height="740" loading="lazy" decoding="async"></div>
+            <div class="service-copy"><span>02 / ESTÉTICA</span><h3>Estética</h3><p>Cuidados que valorizam o bem-estar e a individualidade.</p></div>
+          </article>
+          <article class="service-card">
+            <div class="service-media"><img src="assets/sala-espera.png" alt="Sala de espera da Santa Clara" width="960" height="740" loading="lazy" decoding="async"></div>
+            <div class="service-copy"><span>03 / EXPERIÊNCIA</span><h3>Um espaço acolhedor</h3><p>Um ambiente preparado para receber você com tranquilidade.</p></div>
+          </article>
+          <article class="service-card">
+            <div class="service-media"><img src="assets/clinica-palmeiras.png" alt="Vista externa da Clínica Santa Clara" width="960" height="740" loading="lazy" decoding="async"></div>
+            <div class="service-copy"><span>04 / SANTA CLARA</span><h3>Cuidado de perto</h3><p>Uma trajetória construída com atenção e confiança em Sapezal.</p></div>
+          </article>
+        </div>
+        <div class="slider-status"><span id="service-number">01</span><div class="status-track"><span id="service-progress"></span></div><span>04</span></div>
+      </div>
     </section>
 
-    <section class="professional section-pad" id="profissional" aria-labelledby="professional-title"><div class="professional-grid page-pad"><div class="professional-copy"><span class="eyebrow"><span class="short-rule"></span> 04 / QUEM CUIDA DE VOCÊ</span><h2 class="display-title" id="professional-title" data-split>Confiança tem<br /><em>nome e história.</em></h2><p>Dr. Leonardo Barros é o profissional de referência da Santa Clara. Uma trajetória pautada pela atenção, pelo respeito e pelo cuidado com cada paciente.</p><div class="professional-sign"><span class="short-rule"></span><span>DR. LEONARDO BARROS<br/><small>SANTA CLARA ODONTOLOGIA &amp; ESTÉTICA</small></span></div><a class="outline-action" href="https://wa.me/5565999532460?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o." target="_blank" rel="noopener noreferrer">Agendar avaliação <span aria-hidden="true">↗</span></a></div><figure class="professional-figure"><img src="assets/dr-leonardo-retrato.png" alt="Retrato profissional do Dr. Leonardo Barros" loading="lazy" decoding="async" width="860" height="1100"/><figcaption>DR. LEONARDO BARROS / SAPEZAL, MT</figcaption></figure></div></section>
+    <section class="results section-space" id="resultados" aria-labelledby="resultados-title">
+      <div class="shell">
+        <div class="section-heading heading-row" data-animate="rise" data-stagger="0.12" data-distance="54" data-blur="3">
+          <div>
+            <span class="eyebrow">03 <span class="eyebrow-line"></span> NOSSA GALERIA</span>
+            <h2 id="resultados-title">Sorrisos que contam <em>histórias.</em></h2>
+            <p class="section-subline">Registros de antes e depois disponibilizados pela clínica.</p>
+          </div>
+          <div class="slider-controls" aria-label="Controles da galeria de resultados">
+            <button type="button" class="round-control" id="gallery-prev" aria-label="Foto anterior">←</button>
+            <button type="button" class="round-control" id="gallery-next" aria-label="Próxima foto">→</button>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-outer" data-animate="rise" data-distance="40" data-duration="1.15">
+        <div class="gallery-track" id="gallery-track" tabindex="0" aria-label="Galeria de registros. Use as setas para navegar">
+          <a class="gallery-item" href="assets/antes-depois-01.png" data-index="0" data-title="Registro 01 — sorriso" aria-label="Abrir registro 1">
+            <img src="assets/antes-depois-01.png" loading="lazy" decoding="async" alt="Registro fotográfico comparativo de sorriso, número um" width="840" height="1060"><span>REGISTRO 01 <b aria-hidden="true">↗</b></span>
+          </a>
+          <a class="gallery-item" href="assets/antes-depois-02.png" data-index="1" data-title="Registro 02 — sorriso" aria-label="Abrir registro 2">
+            <img src="assets/antes-depois-02.png" loading="lazy" decoding="async" alt="Registro fotográfico comparativo de sorriso, número dois" width="840" height="1060"><span>REGISTRO 02 <b aria-hidden="true">↗</b></span>
+          </a>
+          <a class="gallery-item" href="assets/antes-depois-03.png" data-index="2" data-title="Registro 03 — sorriso" aria-label="Abrir registro 3">
+            <img src="assets/antes-depois-03.png" loading="lazy" decoding="async" alt="Registro fotográfico comparativo de sorriso, número três" width="840" height="1060"><span>REGISTRO 03 <b aria-hidden="true">↗</b></span>
+          </a>
+          <a class="gallery-item" href="assets/antes-depois-04.png" data-index="3" data-title="Registro 04 — sorriso" aria-label="Abrir registro 4">
+            <img src="assets/antes-depois-04.png" loading="lazy" decoding="async" alt="Registro fotográfico comparativo de sorriso, número quatro" width="840" height="1060"><span>REGISTRO 04 <b aria-hidden="true">↗</b></span>
+          </a>
+          <a class="gallery-item" href="assets/antes-depois-05.png" data-index="4" data-title="Registro 05 — sorriso" aria-label="Abrir registro 5">
+            <img src="assets/antes-depois-05.png" loading="lazy" decoding="async" alt="Registro fotográfico comparativo de sorriso, número cinco" width="840" height="1060"><span>REGISTRO 05 <b aria-hidden="true">↗</b></span>
+          </a>
+          <a class="gallery-item" href="assets/antes-depois-labios.png" data-index="5" data-title="Registro 06 — estética" aria-label="Abrir registro 6">
+            <img src="assets/antes-depois-labios.png" loading="lazy" decoding="async" alt="Registro fotográfico comparativo de tratamento estético" width="840" height="1060"><span>REGISTRO 06 <b aria-hidden="true">↗</b></span>
+          </a>
+        </div>
+      </div>
+      <p class="gallery-note shell"><span aria-hidden="true">↔</span> Arraste para explorar · Toque para ampliar <span>Os resultados variam de pessoa para pessoa.</span></p>
+    </section>
 
-    <section class="confidence page-pad" aria-label="Nossa história"><div class="confidence-left"><span class="eyebrow"><span class="short-rule"></span> CONSTRUÍDA AO LONGO DO TEMPO</span><p>Um compromisso que se renova a cada sorriso.</p></div><div class="confidence-values"><div><strong>22<sup>+</sup></strong><span>ANOS DE EXPERIÊNCIA</span></div><div><strong>5,0</strong><span>AVALIAÇÃO GOOGLE*</span></div></div><p class="confidence-note">*Nota informada pela clínica (26 avaliações à época). Sujeita a atualização.</p></section>
+    <section class="professional section-space band" id="profissional" aria-labelledby="profissional-title">
+      <div class="shell professional-grid">
+        <div class="professional-image" data-animate="rise" data-distance="68" data-wipe="up" data-duration="1.2">
+          <img src="assets/dr-leonardo-retrato.png" alt="Retrato profissional do Dr. Leonardo Barros" loading="lazy" decoding="async" width="900" height="1080" data-fallback="assets/hero-dr-leonardo.png">
+        </div>
+        <div class="professional-copy" data-animate="rise" data-stagger="0.1" data-distance="38">
+          <span class="eyebrow">04 <span class="eyebrow-line"></span> QUEM CUIDA DE VOCÊ</span>
+          <h2 id="profissional-title">Experiência que inspira <em>confiança.</em></h2>
+          <p class="professional-name">Dr. Leonardo Barros</p>
+          <p>Profissional de referência da Santa Clara, com uma atuação dedicada à odontologia, à atenção individualizada e ao bem-estar de seus pacientes.</p>
+          <div class="professional-detail"><span>MAIS DE 22 ANOS</span><span>DE EXPERIÊNCIA DA CLÍNICA</span></div>
+          <a class="button button-primary" href="https://wa.me/5565999532460?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer">Falar com a equipe <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+    </section>
 
-    <section class="contact section-pad" id="contato" aria-labelledby="contact-title"><div class="contact-heading page-pad"><span class="eyebrow"><span class="short-rule"></span> 05 / VAMOS CONVERSAR</span><h2 class="display-title" id="contact-title" data-split>O próximo sorriso<br /><em>pode começar aqui.</em></h2><a class="contact-cta" href="https://wa.me/5565999532460?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20na%20Santa%20Clara." target="_blank" rel="noopener noreferrer"><span>Agendar pelo WhatsApp</span><span aria-hidden="true">↗</span></a></div><div class="contact-grid page-pad"><div class="contact-details"><div><span>ONDE ESTAMOS</span><address>Av. Rotary Internacional, 259<br/>Águas Claras · Sapezal, MT<br/>CEP 78365-000</address><a href="https://www.google.com/maps/search/?api=1&amp;query=Avenida+Rotary+Internacional+259+Sapezal+MT" target="_blank" rel="noopener noreferrer">Ver como chegar ↗</a></div><div><span>HORÁRIOS INFORMADOS</span><p>Segunda a sexta · 08h às 18h<br/>Sábado · 08h às 12h<br/>Domingo · Fechado</p><small>Confirme antes da visita; o horário de quinta-feira pode variar.</small></div><div><span>FALE COM A GENTE</span><a class="phone" href="tel:+5565999532460">(65) 99953-2460</a></div></div><div class="map-figure"><iframe title="Localização da Santa Clara em Sapezal" src="https://maps.google.com/maps?q=Avenida%20Rotary%20Internacional%20259%20Sapezal%20MT&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe><span>Santa Clara / Sapezal — Mato Grosso</span></div></div></section>
+    <section class="contact section-space shell" id="contato" aria-labelledby="contato-title">
+      <div class="contact-intro" data-animate="rise" data-stagger="0.1" data-distance="50" data-blur="3">
+        <span class="eyebrow">05 <span class="eyebrow-line"></span> ESTAMOS AQUI</span>
+        <h2 id="contato-title">O seu próximo sorriso começa <em>aqui.</em></h2>
+        <p>Estamos em Sapezal, Mato Grosso. Será um prazer receber você.</p>
+        <a class="button button-primary" href="https://wa.me/5565999532460?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20uma%20consulta." target="_blank" rel="noopener noreferrer">Agendar pelo WhatsApp <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="contact-grid" data-animate="rise" data-stagger="0.12" data-distance="34">
+        <div class="contact-details">
+          <div><span class="tiny-label">ENDEREÇO</span><p>Avenida Rotary Internacional, 259<br>Águas Claras, Sapezal – MT<br>CEP 78365-000</p><a href="https://www.google.com/maps/search/?api=1&amp;query=Avenida+Rotary+Internacional+259+Sapezal+MT" target="_blank" rel="noopener noreferrer" class="text-link">Como chegar <span aria-hidden="true">↗</span></a></div>
+          <div><span class="tiny-label">CONTATO</span><p><a href="tel:+5565999532460">(65) 99953-2460</a></p><a class="text-link" href="https://wa.me/5565999532460" target="_blank" rel="noopener noreferrer">Conversar no WhatsApp <span aria-hidden="true">↗</span></a></div>
+          <div><span class="tiny-label">HORÁRIOS INFORMADOS</span><p>Segunda a sexta · 8h às 18h<br>Sábado · 8h às 12h</p><small>Confirme os horários pelo WhatsApp.</small></div>
+        </div>
+        <div class="contact-map">
+          <iframe title="Mapa da Santa Clara Odontologia e Estética em Sapezal" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Avenida%20Rotary%20Internacional%20259%20Sapezal%20MT&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed"></iframe>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer class="site-footer page-pad"><div class="footer-top"><a class="footer-logo" href="#topo" aria-label="Santa Clara, voltar ao início">Santa Clara<span>.</span></a><p>Odontologia com essência.<br/>Cuidado em cada detalhe.</p><a class="back-top" href="#topo" aria-label="Voltar ao topo">↑</a></div><div class="footer-bottom"><span>© <span id="year">2026</span> SANTA CLARA ODONTOLOGIA &amp; ESTÉTICA</span><span>SAPEZAL · MATO GROSSO</span><span>FEITO PARA ACOLHER.</span></div></footer>
-</div>
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualização de registro clínico" aria-hidden="true" inert><button class="lightbox-close" type="button" aria-label="Fechar imagem">×</button><button class="lightbox-arrow lightbox-left" type="button" aria-label="Imagem anterior">←</button><figure><img id="lightbox-img" src="" alt=""/><figcaption id="lightbox-caption"></figcaption></figure><button class="lightbox-arrow lightbox-right" type="button" aria-label="Próxima imagem">→</button></div>
-<script defer src="app.js"></script>
-<script id="site-app-bundle">
-(() => {
-  'use strict';
-  if (window.__SC_SITE_INITIALIZED__) return;
-  const $ = (s, root = document) => root.querySelector(s);
-  const $$ = (s, root = document) => Array.from(root.querySelectorAll(s));
-  const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
-  const wrap = (v, n) => (v % n + n) % n;
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-  const year = $('#year');
-  if (year) year.textContent = String(new Date().getFullYear());
+  <footer class="footer">
+    <div class="shell footer-top">
+      <div>
+        <a class="brand brand-footer" href="#inicio" aria-label="Voltar ao início">
+          <span class="brand-monogram" aria-hidden="true">SC<span>.</span></span>
+          <span class="brand-copy">Santa Clara <small>ODONTOLOGIA &amp; ESTÉTICA</small></span>
+        </a>
+        <p>Cuidado e confiança em cada detalhe.</p>
+      </div>
+      <nav aria-label="Links do rodapé"><a href="#essencia">A clínica</a><a href="#cuidados">Cuidados</a><a href="#resultados">Resultados</a><a href="#contato">Contato</a></nav>
+    </div>
+    <div class="shell footer-bottom"><span>© <span id="year">2026</span> Santa Clara Odontologia e Estética</span><span>Sapezal · Mato Grosso</span><a href="#inicio">Voltar ao topo ↑</a></div>
+  </footer>
 
-  // Accessible, closable mobile navigation.
-  const header = $('.site-header');
-  const toggle = $('.menu-toggle');
-  const mobileNav = $('#mobile-nav');
-  const closeMenu = () => {
-    if (!toggle || !mobileNav) return;
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.setAttribute('aria-label', 'Abrir menu');
-    mobileNav.classList.remove('is-open');
-    mobileNav.inert = true;
-  };
-  if (toggle && mobileNav) {
-    toggle.addEventListener('click', () => {
-      const opening = toggle.getAttribute('aria-expanded') !== 'true';
-      if (!opening) return closeMenu();
-      mobileNav.inert = false;
-      mobileNav.classList.add('is-open');
-      toggle.setAttribute('aria-expanded', 'true');
-      toggle.setAttribute('aria-label', 'Fechar menu');
-    });
-    $$('a', mobileNav).forEach(link => link.addEventListener('click', closeMenu));
-    document.addEventListener('click', event => { if (!header.contains(event.target)) closeMenu(); });
-    window.addEventListener('resize', () => { if (innerWidth > 860) closeMenu(); }, {passive:true});
-  }
-  document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
-
-  // Hero architectural construction lines can be paused independently.
-  const motionToggle = $('#motion-toggle');
-  const hero = $('.hero');
-  if (motionToggle && hero) motionToggle.addEventListener('click', () => {
-    const paused = hero.classList.toggle('motion-paused');
-    motionToggle.setAttribute('aria-pressed', String(paused));
-    $('#motion-label').textContent = paused ? 'Animar linhas' : 'Pausar linhas';
-    $('.pause-mark', motionToggle).textContent = paused ? '▷' : 'Ⅱ';
-  });
-
-  // Word-by-word motion driven by scroll position (not merely triggered by the viewport).
-  const splitGroups = [];
-  function splitWords(element) {
-    const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
-    const nodes = [];
-    while (walker.nextNode()) nodes.push(walker.currentNode);
-    nodes.forEach(node => {
-      if (!node.textContent.trim()) return;
-      const frag = document.createDocumentFragment();
-      node.textContent.split(/(\s+)/).forEach(part => {
-        if (!part) return;
-        if (/^\s+$/.test(part)) { frag.append(document.createTextNode(part)); return; }
-        const word = document.createElement('span');
-        word.className = 'split-word';
-        word.textContent = part;
-        frag.append(word);
-      });
-      node.replaceWith(frag);
-    });
-    const words = $$('.split-word', element);
-    if (words.length) splitGroups.push({element, words});
-  }
-  if (!reducedMotion.matches) $$('[data-split]').forEach(splitWords);
-  let waiting = false;
-  function paintScrollText() {
-    waiting = false;
-    if (reducedMotion.matches) return;
-    const viewHeight = window.innerHeight || 700;
-    splitGroups.forEach(({element,words}) => {
-      const box = element.getBoundingClientRect();
-      if (box.top > viewHeight * 1.4 || box.bottom < -250) return;
-      const progress = clamp((viewHeight * .91 - box.top) / (viewHeight * .51 + box.height * .43), 0, 1);
-      words.forEach((word,index) => {
-        const time = clamp((progress - index / Math.max(1,words.length) * .23) / .72,0,1);
-        const ease = 1 - Math.pow(1 - time,3);
-        word.style.opacity = ease.toFixed(3);
-        word.style.transform = `translate3d(0,${((1 - ease) * 19).toFixed(2)}px,0)`;
-      });
-    });
-  }
-  function queueScroll() { if (waiting) return; waiting = true; requestAnimationFrame(paintScrollText); }
-  addEventListener('scroll',queueScroll,{passive:true});
-  addEventListener('resize',queueScroll,{passive:true});
-  document.fonts?.ready.then(queueScroll).catch(() => {});
-  queueScroll();
-
-  // Three-dimensional, keyboard accessible and swipeable carousel.
-  const serviceStage = $('#service-stage');
-  const serviceCards = serviceStage ? $$('.service-card',serviceStage) : [];
-  let serviceIndex = 0, servicesHover = false, servicesVisible = true;
-  function paintServices() {
-    if (!serviceStage || !serviceCards.length) return;
-    const step = Math.min(serviceStage.clientWidth * (innerWidth <= 600 ? .72 : .34), 435);
-    serviceCards.forEach((card, index) => {
-      let diff = index - serviceIndex;
-      if (diff > serviceCards.length / 2) diff -= serviceCards.length;
-      if (diff < -serviceCards.length / 2) diff += serviceCards.length;
-      if (serviceCards.length % 2 === 0 && diff === serviceCards.length / 2) diff *= -1;
-      const distance = Math.abs(diff);
-      card.style.transform = `translate3d(calc(-50% + ${diff * step}px),${distance * 17}px,${-distance * 60}px) rotateY(${-diff * 13}deg) scale(${1 - distance * .115})`;
-      card.style.opacity = distance >= 2 ? '0' : distance ? '.55' : '1';
-      card.style.zIndex = String(10 - distance);
-      card.style.filter = distance ? 'saturate(.78)' : 'none';
-      card.classList.toggle('is-active', !distance);
-      card.setAttribute('aria-hidden', distance === 0 ? 'false' : 'true');
-    });
-    $('#service-current').textContent = String(serviceIndex + 1).padStart(2,'0');
-    $$('.carousel-dots button').forEach((button,index) => button.setAttribute('aria-current',String(index === serviceIndex)));
-  }
-  function setService(index) { serviceIndex = wrap(index,serviceCards.length); paintServices(); }
-  if (serviceStage && serviceCards.length) {
-    $('#service-prev')?.addEventListener('click', () => setService(serviceIndex - 1));
-    $('#service-next')?.addEventListener('click', () => setService(serviceIndex + 1));
-    $$('.carousel-dots button').forEach((button,index) => button.addEventListener('click',() => setService(index)));
-    serviceStage.addEventListener('keydown',event => {
-      if (event.key === 'ArrowLeft') {event.preventDefault();setService(serviceIndex - 1);}
-      if (event.key === 'ArrowRight') {event.preventDefault();setService(serviceIndex + 1);}
-      if (event.key === 'Home') {event.preventDefault();setService(0);}
-      if (event.key === 'End') {event.preventDefault();setService(serviceCards.length - 1);}
-    });
-    let start = null;
-    serviceStage.addEventListener('pointerdown',e => { if (e.isPrimary) start = {x:e.clientX,y:e.clientY}; });
-    serviceStage.addEventListener('pointerup',e => {
-      if (!start) return;
-      const dx = e.clientX - start.x;
-      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(e.clientY - start.y) * .8) setService(serviceIndex + (dx < 0 ? 1 : -1));
-      start = null;
-    });
-    serviceStage.addEventListener('pointercancel',() => start = null);
-    serviceStage.addEventListener('mouseenter',() => servicesHover = true);
-    serviceStage.addEventListener('mouseleave',() => servicesHover = false);
-    if ('IntersectionObserver' in window) new IntersectionObserver(entries => {servicesVisible = entries[0].isIntersecting;},{threshold:.2}).observe(serviceStage);
-    if (!reducedMotion.matches) setInterval(() => {
-      if (servicesVisible && !servicesHover && !document.hidden && !$('#lightbox')?.classList.contains('is-open')) setService(serviceIndex + 1);
-    },6000);
-    addEventListener('resize',paintServices,{passive:true});
-    paintServices();
-  }
-
-  // Circular results gallery: arc poses, touch drag, arrows, and accessible lightbox.
-  const gallery = $('#gallery');
-  const cards = gallery ? $$('.gallery-card',gallery) : [];
-  const lightbox = $('#lightbox');
-  let galleryIndex = 0, modalIndex = 0, lastFocus = null, dragged = false;
-  function paintGallery() {
-    if (!gallery || !cards.length) return;
-    const step = Math.min(gallery.clientWidth * (innerWidth <= 600 ? .60 : .26),370);
-    cards.forEach((card,index) => {
-      let diff = index - galleryIndex;
-      if (diff > cards.length / 2) diff -= cards.length;
-      if (diff < -cards.length / 2) diff += cards.length;
-      const distance = Math.abs(diff);
-      card.style.transform = `translate3d(calc(-50% + ${diff * step}px),${distance * distance * 24}px,0) rotate(${-diff * 5.5}deg) scale(${1 - Math.min(distance,3) * .085})`;
-      card.style.opacity = distance >= 3 ? '0' : distance >= 2 ? '.47' : distance ? '.78' : '1';
-      card.style.zIndex = String(10 - distance);
-      card.style.filter = distance ? 'saturate(.75)' : 'none';
-      card.tabIndex = distance >= 3 ? -1 : 0;
-    });
-    $('#gallery-position').textContent = `${String(galleryIndex+1).padStart(2,'0')} / ${String(cards.length).padStart(2,'0')}`;
-  }
-  function setGallery(index) { galleryIndex = wrap(index,cards.length); paintGallery(); }
-  function showModalImage(index) {
-    modalIndex = wrap(index,cards.length);
-    const card = cards[modalIndex];
-    const source = $('img',card), target = $('#lightbox-img');
-    target.src = source.getAttribute('src');
-    target.alt = source.alt;
-    $('#lightbox-caption').textContent = card.dataset.caption || '';
-    setGallery(modalIndex);
-  }
-  function openModal(index) {
-    if (!lightbox) return;
-    lastFocus = document.activeElement;
-    showModalImage(index);
-    lightbox.inert = false;
-    lightbox.setAttribute('aria-hidden','false');
-    lightbox.classList.add('is-open');
-    document.body.classList.add('modal-open');
-    $('.lightbox-close',lightbox).focus();
-  }
-  function closeModal() {
-    if (!lightbox || !lightbox.classList.contains('is-open')) return;
-    lightbox.classList.remove('is-open');
-    lightbox.setAttribute('aria-hidden','true');
-    lightbox.inert = true;
-    document.body.classList.remove('modal-open');
-    $('#lightbox-img').removeAttribute('src');
-    if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
-  }
-  if (gallery && cards.length) {
-    $('#gallery-prev')?.addEventListener('click',() => setGallery(galleryIndex - 1));
-    $('#gallery-next')?.addEventListener('click',() => setGallery(galleryIndex + 1));
-    gallery.addEventListener('keydown',event => {
-      if (event.key === 'ArrowLeft') {event.preventDefault();setGallery(galleryIndex - 1);}
-      if (event.key === 'ArrowRight') {event.preventDefault();setGallery(galleryIndex + 1);}
-      if (event.key === 'Home') {event.preventDefault();setGallery(0);}
-      if (event.key === 'End') {event.preventDefault();setGallery(cards.length - 1);}
-    });
-    let pointer = null;
-    gallery.addEventListener('pointerdown',e => {if (e.isPrimary) {pointer={x:e.clientX,y:e.clientY};dragged=false;}});
-    gallery.addEventListener('pointermove',e => {if (pointer && Math.abs(e.clientX - pointer.x)>12) dragged=true;});
-    gallery.addEventListener('pointerup',e => {
-      if (!pointer) return;
-      const dx = e.clientX - pointer.x;
-      if (Math.abs(dx)>40 && Math.abs(dx)>Math.abs(e.clientY-pointer.y)*.75) setGallery(galleryIndex+(dx<0?1:-1));
-      pointer=null;
-      if (dragged) setTimeout(() => dragged=false,120);
-    });
-    gallery.addEventListener('pointercancel',() => {pointer=null;dragged=false;});
-    cards.forEach((card,index) => card.addEventListener('click',e => {if (dragged){e.preventDefault();return;}openModal(index);}));
-    addEventListener('resize',paintGallery,{passive:true});
-    paintGallery();
-  }
-  if (lightbox) {
-    $('.lightbox-close',lightbox)?.addEventListener('click',closeModal);
-    $('.lightbox-left',lightbox)?.addEventListener('click',() => showModalImage(modalIndex - 1));
-    $('.lightbox-right',lightbox)?.addEventListener('click',() => showModalImage(modalIndex + 1));
-    lightbox.addEventListener('click',e => {if (e.target === lightbox) closeModal();});
-    document.addEventListener('keydown',e => {
-      if (!lightbox.classList.contains('is-open')) return;
-      if (e.key === 'Escape') {e.preventDefault();closeModal();}
-      if (e.key === 'ArrowRight') {e.preventDefault();showModalImage(modalIndex+1);}
-      if (e.key === 'ArrowLeft') {e.preventDefault();showModalImage(modalIndex-1);}
-      if (e.key === 'Tab') {
-        const focusables = $$('button:not([disabled])',lightbox);
-        const first=focusables[0],last=focusables[focusables.length-1];
-        if (e.shiftKey && document.activeElement===first) {e.preventDefault();last.focus();}
-        else if (!e.shiftKey && document.activeElement===last) {e.preventDefault();first.focus();}
-      }
-    });
-  }
-  reducedMotion.addEventListener?.('change',() => {
-    if (reducedMotion.matches) splitGroups.forEach(({words}) => words.forEach(word => {word.style.opacity='1';word.style.transform='none';}));
-    else queueScroll();
-  });
-  window.__SC_SITE_INITIALIZED__ = true;
-  document.documentElement.classList.add('js-enabled');
-})();
-
-</script>
+  <dialog class="lightbox" id="lightbox" aria-label="Visualização ampliada do registro">
+    <div class="lightbox-head"><span id="lightbox-title">Registro da clínica</span><button type="button" id="lightbox-close" aria-label="Fechar imagem">✕</button></div>
+    <div class="lightbox-body">
+      <button type="button" id="lightbox-prev" aria-label="Registro anterior">←</button>
+      <img id="lightbox-img" alt="">
+      <button type="button" id="lightbox-next" aria-label="Próximo registro">→</button>
+    </div>
+    <p>Registros disponibilizados pela clínica. Resultados individuais podem variar.</p>
+  </dialog>
 </body>
 </html>

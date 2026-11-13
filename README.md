@@ -1,41 +1,31 @@
-# Santa Clara — Odontologia & Estética
+# Santa Clara — Odontologia e Estética
 
-Site institucional estático, em português, da Santa Clara Odontologia e Estética — Sapezal/MT. O conteúdo de contato e endereço vem de `docs/informacoes.md`; fotos e registros de tratamentos pertencem ao acervo `assets/`.
+Website institucional estático, reformulado com a linguagem visual da referência Apple enviada: fundo branco, faixas em cinza suave, fotografia como elemento central, tipografia ampla, cartões de 28 px e animações discretas. A cor verde-escura e os detalhes dourados remetem à identidade da Santa Clara.
+
+## Conteúdo e comportamento
+
+- Dados, contato, endereço e informações sobre a clínica provenientes de `docs/informacoes.md`.
+- Fotos originais armazenadas em `assets/`. Registros de resultados são apresentados como registros fotográficos, sem promessas de resultado clínico.
+- Menu responsivo, carrossel horizontal acessível, galeria com ampliação nativa em `<dialog>`, links de WhatsApp e Google Maps.
+- A página permanece legível se JavaScript ou animações não funcionarem; as imagens da galeria continuam como links normais.
+- Suporte a `prefers-reduced-motion`, carregamento tardio de imagens fora do hero e SEO básico.
+
+## Desenvolvimento
+
+Requer Node.js 18+; não exige instalação de dependências de produção.
+
+```sh
+npm run dev       # http://127.0.0.1:4173
+npm run build     # valida e cria dist/
+npm run preview   # serve dist/
+```
 
 ## Publicação na Hostinger
 
-### Hospedagem de sites (hPanel / public_html)
+Se o projeto estiver conectado a uma implantação Git com etapa de build, configure `npm run build` e diretório de saída `dist`. Em hospedagem estática tradicional, envie **o conteúdo de `dist/`**, não a pasta `dist` inteira, para `public_html/`.
 
-- Execute `npm run build` em Node.js 18 ou superior.
-- Envie **o conteúdo** de `dist/` diretamente para `public_html/` (e não a pasta `dist` em si).
-- Verifique se `public_html/index.html` e `public_html/assets/` estão presentes. As 16 imagens precisam estar nessa pasta.
-- Limpe o cache da Hostinger/CDN após a implantação; valide em janela anônima.
+A raiz do repositório também contém `index.html`, `styles.css`, `app.js` e `assets/` para hosts que publicam a pasta raiz diretamente. **Não misture arquivos de commits anteriores na pasta publicada**: remova os antigos antes de enviar os arquivos da versão nova, ou force uma implantação limpa.
 
-### Implantação Git automática
+## Verificações
 
-- Branch de origem: `main`.
-- Comando de build: `npm run build`.
-- Diretório de saída: `dist`.
-- Se a integração fizer deploy direto dos arquivos da raiz, `index.html`, `assets/`, `styles.css` e `app.js` também formam um site estático funcional.
-
-## Correções de confiabilidade
-
-A página contém CSS e JavaScript essenciais embutidos no `index.html`. Os arquivos `styles.css` e `app.js` continuam separados e são carregados como alternativa para ambientes com política de segurança que bloqueie scripts/estilos embutidos. O JS possui proteção contra inicialização duplicada.
-
-Se a hospedagem não disponibilizar uma imagem de `/assets/`, há uma tentativa de recuperação por URL pública da **mesma imagem** no GitHub. Se a recuperação também falhar, o layout mantém um bloco informativo, sem ficar vazio. Há uma versão navegável da galeria e do carrossel mesmo sem JavaScript, com rolagem horizontal acessível.
-
-O build verifica a presença das imagens referenciadas e se o CSS e o JavaScript embutidos estão sincronizados com os respectivos arquivos. Não há dependências externas de execução: apenas o carregamento opcional de fontes do Google e o mapa incorporado necessitam internet.
-
-### Comandos
-
-```bash
-npm run dev
-npm run build
-npm run preview
-```
-
-## Limites de validação
-
-O HTML, CSS, JavaScript, referências locais e a resposta HTTP do preview de produção foram verificados. O ambiente de execução bloqueia a navegação pelo Chromium e o acesso ao domínio Hostinger informado; portanto, a experiência **ao vivo**, o recorte final das fotografias originais e eventual falha na configuração de deploy não puderam ser inspecionados daqui. Os arquivos originais do GitHub foram preservados, sem substituir imagens clínicas.
-
-O agendamento usa o WhatsApp informado pela clínica. Horários e outros dados operacionais devem ser validados periodicamente pela clínica.
+O script de build falha quando falta qualquer imagem referenciada no HTML. A integração com Google Maps necessita de conexão externa no navegador. O horário informado pela clínica deve ser confirmado via WhatsApp. O repositório contém as imagens originais, que devem ser conferidas na implantação final.
