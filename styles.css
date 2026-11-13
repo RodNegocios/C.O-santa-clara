@@ -197,3 +197,39 @@ html:not(.js-enabled) .section-rail{display:none}
 }
 @media(max-height:660px) and (min-width:681px){.hero{min-height:0}.section-space{min-height:0}.hero-showcase{min-height:300px}.section-space{padding-block:35px}}
 @media(prefers-reduced-motion:reduce){html{scroll-snap-type:none}}
+/* Molduras fotográficas: preserve the full subject instead of cropping faces,
+   treatment comparisons or architecture to a fixed aspect ratio. */
+.hero-visual{display:grid;place-items:center}
+.hero-visual>img{
+  position:static;
+  inset:auto;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center;
+}
+.editorial-photo-wrap,
+.professional-image{display:grid;place-items:center}
+.editorial-photo-wrap img,
+.professional-image img,
+.editorial-small-photo img,
+.service-media img,
+.gallery-item img{
+  object-fit:contain;
+  object-position:center;
+}
+.gallery-item img{
+  display:block;
+  height:auto;
+  aspect-ratio:840 / 1060;
+}
+.editorial-small-photo img{background:#ebedea}
+.service-media{display:grid;place-items:center}
+.gallery-item{background:#edf0ec}
+@media(max-width:680px){
+  .hero-visual>img{object-position:center}
+  .gallery-item img{height:auto;aspect-ratio:840 / 1060}
+}
+@media(max-width:380px){
+  .gallery-item img{height:auto;aspect-ratio:840 / 1060}
+}
